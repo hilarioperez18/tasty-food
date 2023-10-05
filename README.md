@@ -6,9 +6,10 @@ A brief description of what this project does and who it's for
 
 ## Posible Logos
 
-https://raw.githubusercontent.com/hilarioperez18/tasty-food/blob/develop/public/tasty1.png
+![Logo 1](https://github.com/hilarioperez18/tasty-food/blob/develop/public/tasty1.png)
 
-https://raw.githubusercontent.com/hilarioperez18/tasty-food/blob/develop/public/tasty2.png
+![Logo 2](https://github.com/hilarioperez18/tasty-food/blob/develop/public/tasty2.png)
+
 ## Authors
 
 - [@Barbara Flores](https://github.com/bflores96)
