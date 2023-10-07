@@ -1,4 +1,5 @@
 <template>
+    <h1 class="text-2xl mb-8 font-bold">Cientos de recetas</h1>
     <div class="flex">
         <div class="relative inline-block text-left mr-4">
             <button @click="toggleDropdown"
