@@ -86,7 +86,7 @@ export default {
                             .then(response => response.json())
                             //recorro el array resultado, lo meto en un objeto para dejarlo más limpio y lo meto en un array que luego devuelvo 
                             .then(results => results.results.forEach(element => {
-                                objeto = { "title": element.title, "image": element.image };
+                                objeto = { "id": element.id, "title": element.title, "image": element.image };
                                 result.push(objeto);
                             }));
                     }
