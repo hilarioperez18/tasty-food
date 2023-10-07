@@ -42,8 +42,8 @@
         <div class="relative flex-grow">
             <input type="search" id="search-dropdown"
                 class="block w-96 p-2.5 text-sm text-black bg-gray-300 rounded-2xl border-l-gray-50 border-l-2 border border-gray-300dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-black dark:text-blac"
-                placeholder="Find recipie" required>
-            <button type="submit"
+                placeholder="Find recipie" required v-model="searchQuery">
+            <button @click="toggleDropdown"
                 class="absolute top-0 right-0 p-2.5 text-sm font-medium h-full text-black rounded-2xl borde">
                 <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -60,7 +60,8 @@ export default {
     data() {
         return {
             showDropdown: false,
-            selectedCategory: 'FindByRecipie' // Establece 'FindByRecipie' como valor predeterminado
+            selectedCategory: 'FindByRecipie', // Establece 'FindByRecipie' como valor predeterminado
+            searchQuery: '' //valor del campo de búsqueda
         };
     },
     methods: {
@@ -70,6 +71,19 @@ export default {
         selectCategory(category) {
             this.selectedCategory = category;
             this.showDropdown = false;
+        },
+        async searchRecepie() {
+            const apiKey = `2723a49f6004421fb72853e30dba1f0a`;
+            let urlRecepies = 'https://api.spoonacular.com/recipes/complexSearch';
+
+            switch (this.selectedCategory) {
+                case 'FindByRecipie':
+                    if (this.searchQuery) { // Verifica si searchQuery tiene un valor
+                        urlRecepies = `https://api.spoonacular.com/recipes/complexSearch?query=${this.searchQuery}&apiKey=${apiKey}`;
+                        await fetch(urlRecepies);
+                    }
+                    break;
+            }
         }
     }
 }
