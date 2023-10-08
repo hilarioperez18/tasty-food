@@ -22,7 +22,7 @@
                     <li>
                         <button type="button"
                             class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-700 w-full focus:outline-none"
-                            @click="selectCategory('Templates')">Templates</button>
+                            @click="selectCategory('FindByIngredient')">Find by ingredient</button>
                     </li>
                     <li>
                         <button type="button"
@@ -88,6 +88,18 @@ export default {
                             .then(results => results.results.forEach(element => {
                                 objeto = { "id": element.id, "title": element.title, "image": element.image };
                                 result.push(objeto);
+                            }));
+                    }
+                    break;
+                //si seleccionado es por ingrediente    
+                case 'FindByIngredient':
+                    if (this.searchQuery) { // Verifica si searchQuery tiene un valor
+                        urlRecepies = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${this.searchQuery}&apiKey=${apiKey}`;
+                        await fetch(urlRecepies)
+                            .then(response => response.json())
+                            //recorro el array resultado, lo meto en un objeto para dejarlo más limpio y lo meto en un array que luego devuelvo 
+                            .then(results => results.forEach(element => {
+                                result.push(element);
                             }));
                     }
                     break;
