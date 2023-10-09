@@ -1,10 +1,9 @@
 <template>
     <h2>Elige tu tipo de cocina</h2>
     <div class="cuisines">
-        <!-- <div class="cuisine" v-for="cuisine in cuisinesTypes" :key="cuisine"> -->
-            <!-- <p>{{ cuisine }}</p> -->
-            <CountryCard />
-        <!-- </div> -->
+        <div class="cuisine" v-for="cuisine in cuisinesTypes" :key="cuisine">
+            <CountryCard :cuisine="cuisine" />
+        </div>
 
     </div>
 </template>
@@ -36,4 +35,17 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.cuisines {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+</style>
