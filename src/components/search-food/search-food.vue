@@ -73,7 +73,7 @@ export default {
             this.showDropdown = false;
         },
         async searchRecepie() {
-            const apiKey = `2723a49f6004421fb72853e30dba1f0a`;
+            const apiKey = import.meta.env.VITE_API_KEY;
             let urlRecepies = 'https://api.spoonacular.com/recipes/complexSearch';
             let result = [];
             let objeto = {};
