@@ -18,20 +18,7 @@ export default {
             cuisine: "",
             cuisinesTypes: ["Africana", "Asiática", "Americana", "Británica", "Cajún", "Caribeña", "China", "Este Europea", "Europea", "Francesa", "Alemana", "Griega", "India", "Irlandesa", "Italiana", "Japonesa", "Judía", "Coreana", "Latina", "Mediterránea", "Mexicana", "Oriente Medio", "Nórdica", "Sureña", "Española", "Tailandesa", "Vietnamita"],
         }
-    },
-    methods: {
-        async getCountries() {
-            const apiKey = "98b99b4b971a4da3b0f6393a64bd90db";
-            const url = `https://api.spoonacular.com/recipes/complexSearch?cuisine=${this.cuisine}&apiKey=${apiKey}`;
-            await fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    this.countries = data.results;
-                })
-                .catch(error => console.log(error));
-
-        }
-    },
+    }
 }
 </script>
 
