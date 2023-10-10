@@ -82,29 +82,21 @@ export default {
 
 .card-category {
     font-size: 16px;
-    /* Tamaño de fuente aumentado */
     color: #333;
-    /* Texto más oscuro */
     margin-bottom: -10px;
-    /* Separación entre categoría y nombre */
 }
 
 .card-name {
     font-size: 20px;
-    /* Tamaño de fuente aumentado */
     font-weight: bold;
     color: #000;
-    /* Texto negro */
     margin-top: 5px;
     margin-bottom: 10px;
-    /* Separación entre nombre y tiempo de preparación */
 }
 
 .card-preparation-time {
     font-size: 16px;
-    /* Tamaño de fuente aumentado */
     color: #000;
-    /* Texto negro */
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -112,11 +104,8 @@ export default {
 
 .time-container {
     background-color: yellow;
-    /* Fondo amarillo */
     border-radius: 50%;
-    /* Hace el contenedor redondo */
     padding: 5px;
-    /* Espaciado interno */
     display: flex;
     align-items: center;
     gap: 5px;
@@ -124,14 +113,11 @@ export default {
 
 .clock-icon {
     color: #000;
-    /* Icono de reloj en negro */
     font-size: 18px;
 }
 
 .time-number {
     font-size: 18px;
-    /* Tamaño del número aumentado */
-
 }
 
 .prepare-button {
