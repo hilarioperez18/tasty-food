@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
 .card {
-    background: url("../../public/comida.jpg");
+    background: url("../../../public/comida.jpg");
     background-size: cover;
     background-position: center;
     font-size: calc(10px + 2vmin);
