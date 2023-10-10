@@ -1,20 +1,20 @@
 <template>
     <div>
-        <CountryFilter />
+        <AppHeader info="pepe" />
     </div>
 </template>
-
+  
 <script>
-import CountryFilter from './components/CountryFilter.vue';
 export default {
-    name: 'App',
-    components: { CountryFilter },
     data() {
-        return {};
-    },
-    methods: {},
-    mounted() { },
+        return {
+            mensaje: '¡Hola, mundo!'
+        };
+    }
 };
 </script>
-
-<style></style>
+  
+<style>
+/* Estilos CSS aquí */
+</style>
+  
