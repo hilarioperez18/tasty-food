@@ -3,8 +3,9 @@
         <div class="top">
             <img :src="image" alt="Imagen de receta">
             <div class="info">
-                <h3>{{ recipeName }}</h3>
+                <h2>{{ recipeName }}</h2>
                 <div class="categoreis">
+                    <span class="time">⏱️{{ time }} min</span>
                     <span v-for="(category, index) in categories" :key="index">{{ category }}</span>
                 </div>
                 <div class="ingredients">
@@ -17,7 +18,7 @@
             </div>
         </div>
         <div class="instructions">
-            <h2>Instructions</h2>
+            <h3>Instructions</h3>
             <p>{{ instructions }}</p>
         </div>
 
@@ -83,7 +84,7 @@ export default {
 }
 
 img {
-    width: 27rem;
+    width: auto;
     height: auto;
     object-fit: cover;
     border-radius: 20px;
@@ -95,7 +96,7 @@ img {
     justify-content: space-between;
     margin-left: 2rem;
 
-    & h3 {
+    & h2 {
         font-size: 2rem;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-weight: 500;
@@ -109,6 +110,7 @@ img {
     flex-wrap: wrap;
     gap: 1rem;
 
+
     & span {
         background-color: #5894DB;
         padding: .2rem .5rem;
@@ -117,6 +119,10 @@ img {
         font-weight: 500;
         color: #fff;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    & .time {
+        background-color: #F2C94C;
     }
 }
 
@@ -129,6 +135,24 @@ img {
         flex-direction: column;
         gap: .5rem;
     }
+}
 
+.instructions {
+    margin-top: 2rem;
+
+    & h3 {
+        font-size: 1.5rem;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    & p {
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: justify;
+    }
 }
 </style>
