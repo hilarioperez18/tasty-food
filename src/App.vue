@@ -1,17 +1,21 @@
 <template>
     <div>
-        <AppHeader info="pepe" />
+        <projectHeader></projectHeader>
+
     </div>
 </template>
   
 <script>
+
+import projectHeader from './components/projectHeader.vue';
+
+
 export default {
-    data() {
-        return {
-            mensaje: '¡Hola, mundo!'
-        };
-    }
+
+    components: { projectHeader }
+
 };
+
 </script>
   
 <style>
