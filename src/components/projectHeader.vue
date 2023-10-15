@@ -1,13 +1,6 @@
 <template>
     <header>
-        <nav class="
-        navbar
-          
-          px-6
-          py-8
-          mx-auto
-          md:flex md:justify-between md:items-center
-        ">
+        <nav class="navbar">
             <div class="flex items-center justify-between">
                 <router-link to="/" class="
               text-xl
@@ -16,8 +9,6 @@
               md:text-2xl
               hover:text-indigo-400
             ">
-
-
 
                 </router-link>
                 <!-- Mobile menu button -->
@@ -103,31 +94,31 @@ img {
 
 header {
     width: 100%;
-    height: 400px;
+    height: 350px;
 
     background: linear-gradient(to bottom,
             rgba(244, 201, 149, 255),
-
-            rgba(225, 150, 166, .45)), url(../assets/img/bg.jpg);
+            rgba(255, 0, 0, 0)), url(../assets/img/bg.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
 }
 
 .navbar {
-    background-color: var(--mediumblue);
+    background: linear-gradient(to bottom,
+            rgba(152, 189, 241, 1),
+            rgba(152, 189, 241, 0.7));
 }
 
 
 nav {
     width: 100%;
-    position: fixed;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5)
 }
 
 .nav1 {
-    background: transparent;
-    height: 80px;
+
+
     color: #fff;
 }
 
