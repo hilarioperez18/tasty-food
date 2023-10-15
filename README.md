@@ -1,35 +1,19 @@
-# tasty-food
 
-This template should help get you started developing with Vue 3 in Vite.
+# Tasty Food
 
-## Recommended IDE Setup
+A brief description of what this project does and who it's for
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Customize configuration
+## Posible Logos
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+![Logo 1](https://github.com/hilarioperez18/tasty-food/blob/develop/public/tasty1.png)
 
-## Project Setup
+![Logo 2](https://github.com/hilarioperez18/tasty-food/blob/develop/public/tasty2.png)
 
-```sh
-npm install
-```
+## Authors
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- [@Barbara Flores](https://github.com/bflores96)
+- [@Guillermo Escudero](https://github.com/gjescuderoamodeo)
+- [@Hilario Pérez](https://github.com/hilarioperez18/)
+- [@David Gonzalez](https://github.com/gonzsanz)
+- [@Ignacio Barbeyto](https://github.com/IgnacioBar)

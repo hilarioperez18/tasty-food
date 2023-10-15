@@ -1,18 +1,8 @@
-<script setup>
-
-
-</script>
-
 <template>
     <div>
         <projectHeader></projectHeader>
 
     </div>
-
-
-    <main>
-        <TheWelcome />
-    </main>
 </template>
   
 <script>
@@ -31,3 +21,4 @@ export default {
 <style>
 /* Estilos CSS aquí */
 </style>
+  
