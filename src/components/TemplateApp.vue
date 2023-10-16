@@ -6,13 +6,25 @@
             </div>
         </header>
 
-        <div class="search bg-gray-100 p-5">
+        <!-- BUSCADOR RECETAS 
+            
+            
+            <div class="search bg-gray-100 p-5">
             <h2 class="text-2xl font-bold mb-6 text-center">Buscador</h2>
             <div class="search-box flex items-center justify-center">
                 <input type="text" placeholder="Buscar..." class="search-input">
                 <button class="search-button">Buscar</button>
             </div>
         </div>
+ -->
+        <div class="search bg-gray-100 p-5">
+            <h1 class="mt-2 flex justify-center text-2xl mb-8 font-bold">Cientos de recetas</h1>
+            <div class="flex justify-center">
+                <SearchFood />
+            </div>
+        </div>
+
+        <!---->
 
         <section class="recommended bg-gray-100 p-5 text-center">
             <h2 class="text-2xl font-bold mb-6">Nuestros Recomendados</h2>
@@ -128,8 +140,13 @@
     </div>
 </template>
 <script>
-export default {
+import SearchFood from "./search-food/search-food.vue";
 
+
+export default {
+    components: {
+        SearchFood
+    },
 }
 </script>
 <style></style>
