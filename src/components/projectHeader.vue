@@ -54,7 +54,10 @@
             </nav>
         </nav>
         <!--otros componentes-->
-        <SearchFood />
+        <h1 class="mt-2 flex justify-center text-2xl mb-8 font-bold">Cientos de recetas</h1>
+        <div class="flex justify-center">
+            <SearchFood />
+        </div>
     </header>
 </template>
 

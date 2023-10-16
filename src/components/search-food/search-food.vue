@@ -1,7 +1,6 @@
 <template>
-    <h1 class="text-2xl mb-8 font-bold">Cientos de recetas</h1>
     <div class="flex">
-        <div class="relative inline-block text-left mr-4">
+        <div class="relative inline-block text-left mr-3">
             <button @click="toggleDropdown"
                 class="inline-flex items-center justify-center w-32 h-10 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md focus:outline-none focus:ring focus:ring-blue-300">
                 {{ selectedCategory || 'FindByRecipie' }}
