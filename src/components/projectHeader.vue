@@ -52,9 +52,8 @@
                 </div>
 
             </nav>
-            <!--otros componentes-->
-
         </nav>
+        <!--otros componentes-->
         <SearchFood />
     </header>
 </template>
