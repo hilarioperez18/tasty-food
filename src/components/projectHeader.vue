@@ -52,18 +52,27 @@
                 </div>
 
             </nav>
+            <!--otros componentes-->
+
         </nav>
+        <SearchFood />
     </header>
 </template>
 
 <script>
 import { ref } from 'vue';
+import SearchFood from "./search-food/search-food.vue";
+
 export default {
     setup() {
         let showMenu = ref(false);
         const toggleNav = () => (showMenu.value = !showMenu.value);
         return { showMenu, toggleNav };
     },
+    components: {
+        SearchFood
+    },
+
 };
 </script>
 
