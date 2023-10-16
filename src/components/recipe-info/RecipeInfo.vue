@@ -1,15 +1,22 @@
 <template>
-    <div class="container">
-        <div class="top">
-            <img :src="image" alt="Imagen de receta">
-            <div class="info">
-                <h2>{{ recipeName }}</h2>
-                <div class="categoreis">
-                    <span class="time">⏱️{{ time }} min</span>
-                    <span v-for="(category, index) in categories" :key="index">{{ category }}</span>
+    <div class="container bg-gray-200 md:rounded-3xl mx-auto lg:mt-5">
+        <div class="lg:flex lg:items-center">
+            <div class="lg:mx-6 md:mt-6 lg:w-auto">
+                <img :src="image" alt="Imagen de receta" class="w-full h-auto object-cover lg:rounded-3xl">
+            </div>
+            <div class="lg:w-1/2 m-6 ">
+                <h2 class="text-2xl font-semibold mb-4">{{ recipeName }}</h2>
+                <div class="categories flex lg:flex-row gap-4 mb-4">
+                    <span class="bg-yellow-500 text-white px-2 py-1 rounded-lg mb-2 lg:mb-0 w-auto">
+                        ⏱️{{ time }} min
+                    </span>
+                    <span v-for="(category, index) in categories" :key="index"
+                        class="bg-blue-500 text-white px-2 py-1 rounded-lg mb-2 lg:mb-0 lg:w-auto">
+                        {{ category }}
+                    </span>
                 </div>
-                <div class="ingredients">
-                    <ul>
+                <div class="ingredients m-4">
+                    <ul class="gap-2 list-disc m-6">
                         <li v-for="(ingredient, index) in ingredients" :key="index">
                             {{ ingredient.original }}
                         </li>
@@ -17,24 +24,22 @@
                 </div>
             </div>
         </div>
-        <div class="instructions">
-            <h3>Instructions</h3>
-            <p>{{ instructions }}</p>
+        <div class="instructions m-6">
+            <h3 class="text-xl font-semibold mb-4 text-center">Instructions</h3>
+            <p class="text-lg font-normal text-justify">{{ instructions }}</p>
         </div>
-
     </div>
 </template>
 
 <script>
 export default {
-
     name: 'RecipeInfo',
     props: {
         recipeId: {
             type: Number,
             required: true,
-            default: 81429
-        }
+            default: 3422,
+        },
     },
     data() {
         return {
@@ -43,7 +48,7 @@ export default {
             categories: [],
             image: '',
             instructions: '',
-            time: ''
+            time: '',
         };
     },
     methods: {
@@ -52,8 +57,8 @@ export default {
             let urlRecipes = `https://api.spoonacular.com/recipes/${this.recipeId}/information?apiKey=${apiKey}`;
 
             await fetch(urlRecipes)
-                .then(response => response.json())
-                .then(recipe => {
+                .then((response) => response.json())
+                .then((recipe) => {
                     this.recipeName = recipe.title;
                     this.categories = recipe.dishTypes;
                     this.image = recipe.image;
@@ -63,96 +68,12 @@ export default {
                 });
 
             console.log(this.ingredients);
-        }
+        },
     },
     mounted() {
         this.getRecipeInfo();
-    }
-
-}
+    },
+};
 </script>
 
-<style scoped>
-.container {
-    display: flex;
-    flex-direction: column;
-}
-
-.top {
-    display: flex;
-
-}
-
-img {
-    width: auto;
-    height: auto;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-.info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 2rem;
-
-    & h2 {
-        font-size: 2rem;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-weight: 500;
-        margin-bottom: 1rem;
-    }
-}
-
-
-.categoreis {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-
-
-    & span {
-        background-color: #5894DB;
-        padding: .2rem .5rem;
-        border-radius: 10px;
-        font-size: 1rem;
-        font-weight: 500;
-        color: #fff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-
-    & .time {
-        background-color: #F2C94C;
-    }
-}
-
-.ingredients {
-    margin-top: 1rem;
-
-    & ul {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        gap: .5rem;
-    }
-}
-
-.instructions {
-    margin-top: 2rem;
-
-    & h3 {
-        font-size: 1.5rem;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-weight: 500;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
-
-    & p {
-        font-size: 1.2rem;
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: justify;
-    }
-}
-</style>
+<style scoped></style>
