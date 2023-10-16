@@ -1,24 +1,22 @@
 <template>
     <div>
-        <projectHeader></projectHeader>
-
+        <proyectHeader />
     </div>
 </template>
   
 <script>
-
-import projectHeader from './components/projectHeader.vue';
-
+import proyectHeader from "./components/projectHeader.vue";
 
 export default {
-
-    components: { projectHeader }
-
+    data() {
+        return {
+            mensaje: '¡Hola, mundo!'
+        };
+    },
+    name: "App",
+    components: {
+        proyectHeader
+    },
 };
-
 </script>
-  
-<style>
-/* Estilos CSS aquí */
-</style>
   
