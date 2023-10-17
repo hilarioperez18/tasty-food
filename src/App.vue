@@ -1,12 +1,12 @@
 <template>
     <div>
-        <templateApp />
+        <HomeView />
     </div>
 </template>
   
 <script>
 import proyectHeader from "./components/projectHeader.vue";
-import templateApp from "./components/TemplateApp.vue";
+import HomeView from "./views/HomeView.vue";
 
 export default {
     data() {
@@ -17,7 +17,7 @@ export default {
     name: "App",
     components: {
         proyectHeader,
-        templateApp
+        HomeView
     },
 };
 </script>
