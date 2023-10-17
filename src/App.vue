@@ -1,13 +1,13 @@
 <template>
     <div>
-        <!-- <proyectHeader /> -->
-        <router-link to="/recipes">Link a la página de recetas</router-link>
+        <HeaderComponent />
+        <router-link to="/" />
     </div>
     <RouterView />
 </template>
   
 <script>
-import proyectHeader from "./components/projectHeader.vue";
+import HeaderComponent from "./components/HeaderComponent.vue";
 import templateApp from "./components/TemplateApp.vue";
 import { RouterLink, RouterView } from 'vue-router'
 
@@ -19,7 +19,7 @@ export default {
     },
     name: "App",
     components: {
-        proyectHeader,
+        HeaderComponent,
         templateApp,
         RouterLink,
         RouterView
@@ -27,4 +27,3 @@ export default {
     },
 };
 </script>
-  
