@@ -1,24 +1,28 @@
 <template>
-    <div>
-        <HomeView />
+    <div class="container">
+        <HeaderComponent />
+        <router-link to="/" />
     </div>
+    <RouterView />
 </template>
-  
+
 <script>
-import proyectHeader from "./components/projectHeader.vue";
-import HomeView from "./views/HomeView.vue";
+import HeaderComponent from "./components/HeaderComponent.vue";
+import { RouterLink, RouterView } from 'vue-router'
 
 export default {
     data() {
         return {
-            mensaje: '¡Hola, mundo!'
         };
     },
     name: "App",
     components: {
-        proyectHeader,
-        HomeView
+        HeaderComponent,
+        RouterLink,
+        RouterView
+
     },
 };
 </script>
-  
+
+<style></style>
