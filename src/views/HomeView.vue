@@ -100,24 +100,7 @@
         <section class="categories bg-gray-100 p-5 text-center">
             <h2 class="text-2xl font-bold mb-6">Categoría</h2>
             <div class="category-cards grid grid-cols-3 gap-4">
-                <div class="category-card p-4">
-                    <span class="border border-gray-300 inline-block p-2">CATEGORIA 1</span>
-                </div>
-                <div class="category-card p-4">
-                    <span class="border border-gray-300 inline-block p-2">CATEGORIA 2</span>
-                </div>
-                <div class="category-card p-4">
-                    <span class="border border-gray-300 inline-block p-2">CATEGORIA 3</span>
-                </div>
-                <div class="category-card p-4">
-                    <span class="border border-gray-300 inline-block p-2">CATEGORIA 1</span>
-                </div>
-                <div class="category-card p-4">
-                    <span class="border border-gray-300 inline-block p-2">CATEGORIA 2</span>
-                </div>
-                <div class="category-card p-4">
-                    <span class="border border-gray-300 inline-block p-2">CATEGORIA 3</span>
-                </div>
+                <Categories/>
             </div>
         </section>
 
@@ -141,11 +124,13 @@
 </template>
 <script>
 import SearchFood from "../components/search-food/search-food.vue";
+import Categories from "../components/categories/Categories.vue";
 
 
 export default {
     components: {
-        SearchFood
+        SearchFood,
+        Categories
     },
 }
 </script>
