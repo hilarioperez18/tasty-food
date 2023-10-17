@@ -1,6 +1,6 @@
 <template>
     <div>
-        <RecipeInfo />
+        <RecipeInfo :recipeId="idFromRoute" />
     </div>
 </template>
 
@@ -11,20 +11,11 @@ export default {
     components: {
         RecipeInfo
     },
-    data() {
-        return {
-
-        }
-    },
-    methods: {
-
-    },
     computed: {
-
+        idFromRoute() {
+            return this.$route.params.id;
+        },
     },
-    mounted() {
-
-    }
 }
 </script>
 

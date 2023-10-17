@@ -45,8 +45,9 @@
                 <div class="card p-4 border border-gray-300">
                     <img src="" alt="Recomendado 3">
                     <p class="p-2">Texto del Recomendado 3</p>
-                    <RouterLink to="/recipes"><button class="bg-blue-500 text-white px-4 py-2 mt-2">Ver más</button>
-                    </RouterLink>
+                    <router-link :to="{name: 'recipes', params:{id:id}}"><button
+                            class="bg-blue-500 text-white px-4 py-2 mt-2">Ver más</button>
+                    </router-link>
                 </div>
             </div>
         </section>
@@ -150,6 +151,11 @@ import SearchFood from "../components/search-food/search-food.vue";
 export default {
     components: {
         SearchFood
+    },
+    data() {
+        return {
+            id: 1
+        }
     },
 }
 </script>
