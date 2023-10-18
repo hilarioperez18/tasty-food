@@ -1,37 +1,17 @@
-<!-- <template>
-    <div>
-        <VListRecipe />
-    </div>
-</template>
-  
-<script>
-import proyectHeader from "./components/projectHeader.vue";
-import VListRecipe from "./components/VListRecipe.vue";
-
-export default {
-    data() {
-        return {
-            mensaje: '¡Hola, mundo!'
-        };
-    },
-    name: "App",
-    components: {
-        proyectHeader,
-        VListRecipe
-    },
-};
-</script> -->
-
 <template>
     <div>
+        <VListSearchRecipe />
         <VListRecipe />
-        <!-- <proyectHeader /> -->
+        <VSimilarRecipes />
+        <VCardRecipe />
     </div>
 </template>
   
 <script>
-import proyectHeader from "./components/projectHeader.vue";
+import VListSearchRecipe from "@/components/VListSearchRecipe.vue";
 import VListRecipe from "./components/VListRecipe.vue";
+import VSimilarRecipes from "./components/VSimilarRecipes.vue";
+import VCardRecipe from "./components/VCardRecipe.vue";
 
 export default {
     data() {
@@ -41,8 +21,10 @@ export default {
     },
     name: "App",
     components: {
-        proyectHeader,
-        VListRecipe
+        VListSearchRecipe,
+        VListRecipe,
+        VSimilarRecipes,
+        VCardRecipe
     },
 };
 </script>
