@@ -23,16 +23,6 @@
                             class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-700 w-full focus:outline-none"
                             @click="selectCategory('FindByIngredient')">Find by ingredient</button>
                     </li>
-                    <li>
-                        <button type="button"
-                            class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-700 w-full focus:outline-none"
-                            @click="selectCategory('Design')">Design</button>
-                    </li>
-                    <li>
-                        <button type="button"
-                            class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-700 w-full focus:outline-none"
-                            @click="selectCategory('Logos')">Logos</button>
-                    </li>
                 </ul>
             </div>
         </div>

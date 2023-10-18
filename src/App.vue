@@ -1,31 +1,27 @@
 <template>
-    <div>
-        <VListSearchRecipe />
-        <VListRecipe />
-        <VSimilarRecipes />
-        <VCardRecipe />
+    <div class="container">
+        <HeaderComponent />
+        <router-link to="/" />
     </div>
+    <RouterView />
 </template>
-  
+
 <script>
-import VListSearchRecipe from "@/components/VListSearchRecipe.vue";
-import VListRecipe from "./components/VListRecipe.vue";
-import VSimilarRecipes from "./components/VSimilarRecipes.vue";
-import VCardRecipe from "./components/VCardRecipe.vue";
+import HeaderComponent from "./components/HeaderComponent.vue";
+import { RouterLink, RouterView } from 'vue-router'
 
 export default {
     data() {
         return {
-            mensaje: '¡Hola, mundo!'
         };
     },
     name: "App",
     components: {
-        VListSearchRecipe,
-        VListRecipe,
-        VSimilarRecipes,
-        VCardRecipe
+        HeaderComponent,
+        RouterLink,
+        RouterView
+
     },
 };
 </script>
-  
+<style></style>
