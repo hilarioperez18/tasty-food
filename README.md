@@ -1,6 +1,9 @@
-# tasty-food
+# MyTastyFood
 
-This template should help get you started developing with Vue 3 in Vite.
+
+Web application where you can find recipes, see our recommended dishes, search by categories and see similar recipes that might interest you. You can also search for recipes using filters to be more specific. Now you can try to prepare them! Enjoy cooking! 🍅🥕🥦
+
+![tastylogo](https://github.com/hilarioperez18/tasty-food/assets/103462138/482dca46-e5c3-4298-9f7f-24184407f08b)
 
 ## Recommended IDE Setup
 
@@ -33,3 +36,12 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Authors 👩‍💻
+
+- [@Bárbara Flores](https://github.com/bflores96)
+- [@Guillermo Escudero](https://github.com/gjescuderoamodeo)
+- [@Hilario Pérez](https://github.com/hilarioperez18)
+- [@David González](https://github.com/gonzsanz)
+- [@Ignacio Barbeyto](https://github.com/IgnacioBar)
+- [@Iván Martínez](https://github.com/ivanmartinezd)
