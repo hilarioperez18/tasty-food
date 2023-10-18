@@ -19,7 +19,8 @@ export default {
     data() {
         return {
             cuisine: '',
-            cuisinesTypes: ["Africana", "Asiática", "Americana", "Británica", "Cajún", "Caribeña", "China", "Este Europea", "Europea", "Francesa", "Alemana", "Griega", "India", "Irlandesa", "Italiana", "Japonesa", "Judía", "Coreana", "Latina", "Mediterránea", "Mexicana", "Oriente Medio", "Nórdica", "Sureña", "Española", "Tailandesa", "Vietnamita"],
+            cuisinesTypes: ["African", "Asian", "American", "British", "Cajun", "Caribbean", "Chinese", "Eastern European", "European", "French", "German", "Greek", "Indian", "Irish", "Italian", "Japanese", "Jewish", "Korean", "Latin American", "Mediterranean", "Mexican", "Middle Eastern", "Nordic", "Southern", "Spanish", "Thai", "Vietnamese"
+            ]
         };
     },
     mounted() {
@@ -49,6 +50,7 @@ export default {
     margin: 0 auto;
     padding: 0 20px;
 }
+
 .carousel {
     display: flex;
     overflow: hidden;

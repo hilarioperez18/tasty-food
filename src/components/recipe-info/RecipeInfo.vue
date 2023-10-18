@@ -53,7 +53,7 @@ export default {
     methods: {
         async getRecipeInfo() {
             const apiKey = import.meta.env.VITE_API_KEY;
-            let urlRecipes = `https://api.spoonacular.com/recipes/${this.recipeId}/information?apiKey=${apiKey}`;
+            const urlRecipes = `https://api.spoonacular.com/recipes/${this.recipeId}/information?apiKey=${apiKey}`;
 
             await fetch(urlRecipes)
                 .then((response) => response.json())
