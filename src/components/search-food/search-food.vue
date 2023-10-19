@@ -93,8 +93,15 @@ export default {
                     }
                     break;
             }
-            console.log(result);
-            return result;
+            //console.log(result);
+            //return result;
+            let resultado2 = JSON.stringify(result);
+            localStorage.setItem("result", resultado2);
+
+            this.$router.push({
+                name: 'results',
+            });
+
         }
     }
 }
