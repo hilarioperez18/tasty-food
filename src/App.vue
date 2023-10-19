@@ -1,6 +1,6 @@
 <template>
+    <HeaderComponent />
     <div class="container">
-        <HeaderComponent />
         <router-link to="/" />
     </div>
     <RouterView />
