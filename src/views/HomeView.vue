@@ -1,10 +1,6 @@
 <template >
     <div>
-        <header class="bg-gray-800 text-white p-5 text-center">
-            <div class="logo">
-                <h1>Logo</h1>
-            </div>
-        </header>
+
 
         <!-- BUSCADOR RECETAS 
             
@@ -45,7 +41,7 @@
                 <div class="card p-4 border border-gray-300">
                     <img src="" alt="Recomendado 3">
                     <p class="p-2">Texto del Recomendado 3</p>
-                    <router-link :to="{name: 'recipes', params:{id:id}}"><button
+                    <router-link :to="{ name: 'recipes', params: { id: id } }"><button
                             class="bg-blue-500 text-white px-4 py-2 mt-2">Ver más</button>
                     </router-link>
                 </div>

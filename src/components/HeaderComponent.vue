@@ -1,82 +1,87 @@
 <template>
     <header>
         <nav class="navbar">
-            <div class="flex items-center justify-between">
-                <router-link to="/" class="
-              text-xl
-              font-bold
-              text-gray-100
-              md:text-2xl
-              hover:text-indigo-400
-            ">
+            <div class="my-navbar mx-auto px-2 sm:px-6 ">
+                <div class="relative flex items-center justify-between">
+                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                        <!-- Mobile menu button-->
+                        <button type="button"
+                            class="relative inline-flex items-center justify-center rounded-md p-2 hover:bg-colorbg hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="absolute -inset-0.5"></span>
+                            <span class="sr-only">Open main menu</span>
+                            <!--
+            Icon when menu is closed.
 
-                </router-link>
-                <!-- Mobile menu button -->
-                <div @click="toggleNav" class="flex md:hidden">
-                    <button type="button" class="
-                text-gray-100
-                hover:text-gray-400
-                focus:outline-none focus:text-gray-400
-              ">
-                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
-                            <path fill-rule="evenodd"
-                                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
-                            </path>
-                        </svg>
-                    </button>
+            Menu open: "hidden", Menu closed: "block"
+          -->
+                            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <!--
+            Icon when menu is open.
+
+            Menu open: "block", Menu closed: "hidden"
+          -->
+                            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class=" logo flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                        <div class="flex flex-shrink-0 items-center">
+                            <img src="../assets/img/tastylogo.png" alt="">
+                        </div>
+                        <div class="hidden sm:ml-6 sm:flex flex items-center">
+                            <div class="flex items-center space-x-4">
+                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                                <a href="#" class="bg-colordark text-white rounded-md px-3 py-2 font-medium"
+                                    aria-current="page">Inicio</a>
+                                <a href="#"
+                                    class="hover:bg-blue-200 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Recetas</a>
+                                <a href="#"
+                                    class="hover:bg-blue-200 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Recomendaciones</a>
+                                <a href="#"
+                                    class="hover:bg-blue-200 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Sobre
+                                    Nosotros</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+
+
+
+                    </div>
                 </div>
             </div>
 
-            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-            <nav id="nav" class="nav1">
-                <div class="contenedor-nav">
-                    <div class="logo">
-                        <img src="../assets/img/tastylogo.png" alt="">
-                    </div>
-                    <ul :class="showMenu ? 'flex' : 'hidden'" class="
-            flex-col
-            mt-8
-            space-y-4
-            md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
-          ">
-                        <div class="enlaces" id="enlaces">
-
-
-                            <a href="#" id="enlace-inicio" class="btn-header">Inicio</a>
-                            <a href="#" id="enlace-equipo" class="btn-header">Recetas</a>
-                            <a href="#" id="enlace-servicio" class="btn-header">Recomendaciones</a>
-                            <a href="#" id="enlace-trabajo" class="btn-header">Contacto</a>
-                        </div>
-
-                    </ul>
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="sm:hidden" id="mobile-menu">
+                <div class="space-y-1 px-2 pb-3 pt-2">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="#" class="bg-colordark text-white block rounded-md px-3 py-2 text-base font-medium"
+                        aria-current="page">Inicio</a>
+                    <a href="#"
+                        class="hover:bg-blue-200 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Recetas</a>
+                    <a href="#"
+                        class="hover:bg-blue-200 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Recomendaciones</a>
+                    <a href="#"
+                        class="hover:bg-blue-200 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Sobre
+                        nosotros</a>
                 </div>
-
-            </nav>
+            </div>
         </nav>
-        <!--otros componentes-->
-        <h1 class="mt-2 flex justify-center text-2xl mb-8 font-bold">Hundreds of recipes</h1>
-        <div class="flex justify-center">
-            <SearchFood />
-        </div>
     </header>
 </template>
 
+
 <script>
-import { ref } from 'vue';
-import SearchFood from "./search-food/search-food.vue";
 
-export default {
-    setup() {
-        let showMenu = ref(false);
-        const toggleNav = () => (showMenu.value = !showMenu.value);
-        return { showMenu, toggleNav };
-    },
-    components: {
-        SearchFood
-    },
-
-};
 </script>
+
 
 <style>
 :root {
@@ -95,37 +100,45 @@ export default {
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'open sans', sans-serif;
-}
 
-img {
-    vertical-align: top;
-}
 
-header {
-    width: 100%;
-    height: 350px;
 
-    background: linear-gradient(to bottom,
-            rgba(244, 201, 149, 255),
-            rgba(255, 0, 0, 0)), url(../assets/img/bg.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-}
 
 .navbar {
+    font-family: 'open sans', sans-serif;
     background: linear-gradient(to bottom,
             rgba(152, 189, 241, 1),
             rgba(152, 189, 241, 0.7));
 }
 
-
-nav {
+.my-navbar {
     width: 100%;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5)
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000;
+    height: inherit;
+    overflow: hidden;
 }
+
+.mytext {
+    display: inline-block;
+    padding: 5px 0;
+    margin-right: 17px;
+    font-size: 17px;
+    font-weight: 300;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    color: inherit;
+}
+
+
+.bg-colordark {
+    background: #1b74bd;
+}
+
 
 .nav1 {
 
@@ -136,7 +149,6 @@ nav {
 .contenedor-nav {
     display: flex;
     margin: auto;
-    width: 90%;
     justify-content: space-between;
     align-items: center;
     max-width: 1000;
@@ -155,10 +167,6 @@ nav .enlaces a {
     color: inherit;
 }
 
-nav .enlaces a:hover {
-    border-bottom: 3px solid #1b74bd;
-    transition: 0, 6s;
-}
 
 .logo,
 .logo img {
