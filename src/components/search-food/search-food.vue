@@ -16,7 +16,7 @@
                     <li>
                         <button type="button"
                             class="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-700 w-full focus:outline-none"
-                            @click="selectCategory('FindByRecipie')">Find by recipie</button>
+                            @click="selectCategory('FindByRecipie')">Find by recipe</button>
                     </li>
                     <li>
                         <button type="button"
