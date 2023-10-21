@@ -4,6 +4,7 @@
     </div>
 </template>
 <script>
+import CountryFilter from "../components/cuisine-types/CountryFilter.vue";
 export default {
     data() {
         return {
