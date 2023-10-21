@@ -44,13 +44,6 @@ export default {
 
 
 <style scoped>
-.container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 .carousel {
     display: flex;
     overflow: hidden;
