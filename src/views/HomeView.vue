@@ -1,10 +1,6 @@
 <template >
     <div>
-        <header class="bg-gray-800 text-white p-5 text-center">
-            <div class="logo">
-                <h1>Logo</h1>
-            </div>
-        </header>
+
 
         <!-- BUSCADOR RECETAS 
             

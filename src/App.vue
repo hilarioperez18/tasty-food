@@ -1,6 +1,6 @@
 <template>
+    <HeaderComponent />
     <div class="container">
-        <HeaderComponent />
         <router-link to="/" />
     </div>
     <RouterView />
@@ -24,5 +24,4 @@ export default {
     },
 };
 </script>
-
 <style></style>
