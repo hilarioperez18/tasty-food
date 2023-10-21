@@ -45,7 +45,7 @@
                 <div class="card p-4 border border-gray-300">
                     <img src="" alt="Recomendado 3">
                     <p class="p-2">Texto del Recomendado 3</p>
-                    <router-link :to="{name: 'recipes', params:{id:id}}"><button
+                    <router-link :to="{ name: 'recipes', params: { id: id } }"><button
                             class="bg-blue-500 text-white px-4 py-2 mt-2">Ver más</button>
                     </router-link>
                 </div>
@@ -53,52 +53,9 @@
         </section>
 
 
-        <section class="type bg-gray-100 p-5 text-center">
-            <h2 class="text-2xl font-bold mb-6">Tipo</h2>
-            <div class="grid grid-cols-7 gap-4">
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 1</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 2</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 3</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 4</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 5</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 6</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 7</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 1</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 2</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 3</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 4</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 5</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 6</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 7</p>
-                </div>
-            </div>
+        <section>
+            <h2 class="text-2xl font-bold mb-6 text-center">Type</h2>
+            <CountryFilter />
         </section>
 
 
@@ -146,11 +103,12 @@
 </template>
 <script>
 import SearchFood from "../components/search-food/search-food.vue";
-
+import CountryFilter from '../components/cuisine-types/CountryFilter.vue'
 
 export default {
     components: {
-        SearchFood
+        SearchFood,
+        CountryFilter
     },
     data() {
         return {

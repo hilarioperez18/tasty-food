@@ -31,7 +31,7 @@ export default {
                 .then((recipes) => {
                     this.recipes = recipes.results;
                 });
-                console.log(this.recipes);
+            console.log(this.recipes);
         }
     },
 };
