@@ -130,9 +130,6 @@ export default {
                     name: 'results',
                 });
             }
-
-
-
         }
     }
 }
