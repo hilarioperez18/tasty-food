@@ -49,14 +49,14 @@
         </section>
 
 
-        <section>
-            <h2 class="text-2xl font-bold mb-6 text-center">Type</h2>
+        <section class="bg-gray-100 p-5 text-center">
+            <h2 class="text-2xl font-bold mb-6 text-center">Cuisine Type</h2>
             <CountryFilter />
         </section>
 
 
-        <section class="categories bg-gray-100 p-5 text-center">
-                <RecipeCategories />
+        <section class="bg-gray-100 p-5">
+            <RecipeCategories />
         </section>
 
         <footer class="bg-gray-800 text-white p-5 text-center">
@@ -80,11 +80,13 @@
 <script>
 import SearchFood from "../components/search-food/search-food.vue";
 import CountryFilter from '../components/cuisine-types/CountryFilter.vue'
+import RecipeCategories from '../components/categories/RecipeCategories.vue'
 
 export default {
     components: {
         SearchFood,
-        CountryFilter
+        CountryFilter,
+        RecipeCategories
     },
     data() {
         return {
@@ -93,4 +95,15 @@ export default {
     },
 }
 </script>
-<style></style>
+<style>
+body {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+</style>
