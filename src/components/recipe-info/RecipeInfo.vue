@@ -38,7 +38,6 @@ export default {
         recipeId: {
             type: Number,
             required: true,
-            default: 3422,
         },
     },
     data() {

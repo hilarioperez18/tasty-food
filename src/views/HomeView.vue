@@ -1,10 +1,6 @@
 <template >
     <div>
-        <header class="bg-gray-800 text-white p-5 text-center">
-            <div class="logo">
-                <h1>Logo</h1>
-            </div>
-        </header>
+
 
         <!-- BUSCADOR RECETAS 
             
@@ -30,19 +26,24 @@
             <h2 class="text-2xl font-bold mb-6">Nuestros Recomendados</h2>
             <div class="cards flex justify-around flex-wrap">
                 <div class="card p-4 border border-gray-300">
-                    <img src="imagen1.jpg" alt="Recomendado 1">
+                    <img src="" alt="Recomendado 1">
                     <p class="p-2">Texto del Recomendado 1</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 mt-2">Ver más</button>
+                    <RouterLink to="/recipes"><button class="bg-blue-500 text-white px-4 py-2 mt-2">Ver más</button>
+                    </RouterLink>
                 </div>
                 <div class="card p-4 border border-gray-300">
-                    <img src="imagen2.jpg" alt="Recomendado 2">
+                    <img src="" alt="Recomendado 2">
                     <p class="p-2">Texto del Recomendado 2</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 mt-2">Ver más</button>
+                    <RouterLink to="/recipes"><button class="bg-blue-500 text-white px-4 py-2 mt-2">Ver más</button>
+                    </RouterLink>
+
                 </div>
                 <div class="card p-4 border border-gray-300">
-                    <img src="imagen3.jpg" alt="Recomendado 3">
+                    <img src="" alt="Recomendado 3">
                     <p class="p-2">Texto del Recomendado 3</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 mt-2">Ver más</button>
+                    <router-link :to="{ name: 'recipes', params: { id: id } }"><button
+                            class="bg-blue-500 text-white px-4 py-2 mt-2">Ver más</button>
+                    </router-link>
                 </div>
             </div>
         </section>
@@ -131,6 +132,11 @@ export default {
     components: {
         SearchFood,
         Categories
+    },
+    data() {
+        return {
+            id: 1
+        }
     },
 }
 </script>
