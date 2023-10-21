@@ -99,10 +99,7 @@
 
 
         <section class="categories bg-gray-100 p-5 text-center">
-            <h2 class="text-2xl font-bold mb-6">Categoría</h2>
-            <div class="category-cards grid grid-cols-3 gap-4">
-                <Categories/>
-            </div>
+                <RecipeCategories />
         </section>
 
         <footer class="bg-gray-800 text-white p-5 text-center">
@@ -125,13 +122,12 @@
 </template>
 <script>
 import SearchFood from "../components/search-food/search-food.vue";
-import Categories from "../components/categories/Categories.vue";
-
+import RecipeCategories from "../components/categories/RecipeCategories.vue";
 
 export default {
     components: {
         SearchFood,
-        Categories
+        RecipeCategories
     },
     data() {
         return {
