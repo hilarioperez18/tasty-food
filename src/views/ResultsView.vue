@@ -5,7 +5,7 @@
     </div>
 </template>
 <script>
-import CountryFilter from "../components/cuisine-types/CountryFilter.vue";
+// import CountryFilter from "../components/cuisine-types/CountryFilter.vue";
 import VListSearchRecipe from '../components/VListSearchRecipe.vue';
 import searchFood from '../components/search-food/search-food.vue';
 
