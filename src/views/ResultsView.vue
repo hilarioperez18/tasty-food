@@ -1,13 +1,26 @@
 <template lang="">
-    <div>
+    <div id="test">
         
     </div>
 </template>
 <script>
+import CountryFilter from "../components/cuisine-types/CountryFilter.vue";
 export default {
-
+    data() {
+        return {
+            result: [],
+        }
+    },
+    beforeMount() {
+        this.result = localStorage.getItem("result");
+        console.log(JSON.parse(this.result));
+    }
 }
 </script>
-<style lang="">
-    
+<style>
+#test {
+    background-color: brown;
+    height: 100px;
+    width: 100px;
+}
 </style>

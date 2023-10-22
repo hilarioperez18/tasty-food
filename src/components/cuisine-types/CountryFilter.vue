@@ -1,34 +1,69 @@
 <template>
-    <h2>Elige tu tipo de cocina</h2>
-    <div class="cuisines">
-        <div class="cuisine" v-for="cuisine in cuisinesTypes" :key="cuisine">
-            <CountryCard :cuisine="cuisine" />
+    <div class="container">
+        <h2>Choose your cuisine type</h2>
+        <div class="carousel">
+            <div class="card" v-for="(cuisine, index) in cuisinesTypes" :key="index">
+                <CountryCard :cuisine="cuisine" />
+            </div>
         </div>
-
     </div>
 </template>
 
+
 <script>
-import CountryCard from "./CountryCard.vue";
+import CountryCard from './CountryCard.vue';
+
 export default {
-    name: "CountryFilter",
+    name: 'CountryFilter',
     components: { CountryCard },
     data() {
         return {
-            cuisine: "",
-            cuisinesTypes: ["Africana", "Asiática", "Americana", "Británica", "Cajún", "Caribeña", "China", "Este Europea", "Europea", "Francesa", "Alemana", "Griega", "India", "Irlandesa", "Italiana", "Japonesa", "Judía", "Coreana", "Latina", "Mediterránea", "Mexicana", "Oriente Medio", "Nórdica", "Sureña", "Española", "Tailandesa", "Vietnamita"],
-        }
-    }
-}
+            cuisine: '',
+            cuisinesTypes: ["African", "Asian", "American", "British", "Cajun", "Caribbean", "Chinese", "Eastern European", "European", "French", "German", "Greek", "Indian", "Irish", "Italian", "Japanese", "Jewish", "Korean", "Latin American", "Mediterranean", "Mexican", "Middle Eastern", "Nordic", "Southern", "Spanish", "Thai", "Vietnamese"
+            ]
+        };
+    },
+    mounted() {
+        const carousel = document.querySelector('.carousel');
+        let position = 0;
+
+        setInterval(() => {
+            position += 210; // Ancho de una tarjeta más el margen
+            if (position >= carousel.scrollWidth) {
+                position = 0;
+            }
+
+            carousel.scrollTo({
+                left: position,
+                behavior: 'smooth',
+            });
+        }, 3000); // Cambia el intervalo de tiempo según tus preferencias
+    },
+};
 </script>
 
+
 <style scoped>
-.cuisines {
+.carousel {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 200px;
+    height: auto;
+    /* Ajusta el alto según tus necesidades */
+    margin-right: 10px;
+    scroll-snap-align: start;
+    text-align: center;
+    display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
 }
 
 h2 {

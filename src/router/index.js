@@ -19,7 +19,8 @@ const router = createRouter({
         {
             path: '/results',
             name: 'results',
-            component: ResultsView
+            component: ResultsView,
+            props: true
         }
     ]
 })
