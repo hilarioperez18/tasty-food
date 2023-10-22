@@ -1,28 +1,34 @@
-<template >
-    <div>
-        <header class="bg-gray-800 text-white p-5 text-center">
-            <div class="logo">
-                <h1>Logo</h1>
-            </div>
-        </header>
-        <div class="flex justify-center">
-            <VListSearchRecipe />
-        </div>
-
+<template lang="">
+    <div id="test">
+        <searchFood class="ml-9" />
+        <VListSearchRecipe :recipes="result"></VListSearchRecipe>
     </div>
 </template>
 <script>
+import CountryFilter from "../components/cuisine-types/CountryFilter.vue";
 import VListSearchRecipe from '../components/VListSearchRecipe.vue';
-
+import searchFood from '../components/search-food/search-food.vue';
 
 export default {
     components: {
-        VListSearchRecipe
+        VListSearchRecipe,
+        searchFood
     },
     data() {
         return {
+            result: [],
         }
     },
+    beforeMount() {
+        this.result = JSON.parse(localStorage.getItem("result"))
+        console.log(this.result);
+    }
 }
 </script>
-<style></style>
+<style>
+#test {
+    background-color: brown;
+    height: max-content;
+    width: max-content;
+}
+</style>

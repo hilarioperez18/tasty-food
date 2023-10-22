@@ -1,18 +1,6 @@
 <template >
     <div>
-        <header class="bg-gray-800 text-white p-5 text-center">
-            <div class="logo">
-                <h1>Logo</h1>
-            </div>
-        </header>
 
-        <!-- Botón para ir a ResultsView.vue -->
-        <div class="flex justify-center mt-4">
-            <router-link to="/results-view">
-                <button
-                    class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300">ResultsView</button>
-            </router-link>
-        </div>
 
         <!-- BUSCADOR RECETAS 
             
@@ -32,111 +20,37 @@
             </div>
         </div>
 
-        <div class="flex justify-center">
-            <VListRecipe />
-        </div>
+        <!-- Component Our Recomended-->
+        <HomeRecomended />
 
-
-        <section class="type bg-gray-100 p-5 text-center">
-            <h2 class="text-2xl font-bold mb-6">Tipo</h2>
-            <div class="grid grid-cols-7 gap-4">
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 1</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 2</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 3</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 4</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 5</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 6</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 7</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 1</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 2</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 3</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 4</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 5</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 6</p>
-                </div>
-                <div class="type-card p-4">
-                    <p class="border border-gray-300 inline-block p-2">TIPO 7</p>
-                </div>
-            </div>
+        <section class="bg-gray-100 p-5 text-center">
+            <h2 class="text-2xl font-bold mb-6 text-center">Cuisine Type</h2>
+            <CountryFilter />
         </section>
 
 
-        <section class="categories bg-gray-100 p-5 text-center">
-            <h2 class="text-2xl font-bold mb-6">Categoría</h2>
-            <div class="category-cards grid grid-cols-3 gap-4">
-                <div class="category-card p-4">
-                    <span class="border border-gray-300 inline-block p-2">CATEGORIA 1</span>
-                </div>
-                <div class="category-card p-4">
-                    <span class="border border-gray-300 inline-block p-2">CATEGORIA 2</span>
-                </div>
-                <div class="category-card p-4">
-                    <span class="border border-gray-300 inline-block p-2">CATEGORIA 3</span>
-                </div>
-                <div class="category-card p-4">
-                    <span class="border border-gray-300 inline-block p-2">CATEGORIA 1</span>
-                </div>
-                <div class="category-card p-4">
-                    <span class="border border-gray-300 inline-block p-2">CATEGORIA 2</span>
-                </div>
-                <div class="category-card p-4">
-                    <span class="border border-gray-300 inline-block p-2">CATEGORIA 3</span>
-                </div>
-            </div>
+        <section class="bg-gray-100 p-5">
+            <RecipeCategories />
         </section>
 
-        <footer class="bg-gray-800 text-white p-5 text-center">
-            <div class="footer-logo">
-                <!-- Logo del footer (Personaliza según sea necesario) -->
-            </div>
-            <div class="footer-text">
-                <h3 class="text-4xl font-bold mb-3">Tasty Food</h3>
-                <div class="footer-authors">
-                    <p>Autores: <a href="#" class="text-white">auth 1</a>,
-                        <a href="#" class="text-white">auth 2</a>,
-                        <a href="#" class="text-white">auth 3</a>,
-                        <a href="#" class="text-white">auth 4</a>,
-                        <a href="#" class="text-white">auth 5</a>
-                    </p>
-                </div>
-            </div>
-        </footer>
+        <!-- Component Our Recomended-->
+        <HomeFooter />
     </div>
 </template>
 <script>
 import SearchFood from "../components/search-food/search-food.vue";
-import VListRecipe from "../components/VListRecipe.vue";
-
+import CountryFilter from '../components/cuisine-types/CountryFilter.vue'
+import RecipeCategories from '../components/categories/RecipeCategories.vue'
+import HomeRecomended from '@/components/HomeRecomended.vue';
+import HomeFooter from '@/components/HomeFooter.vue';
 
 export default {
     components: {
         SearchFood,
-        VListRecipe
+        CountryFilter,
+        RecipeCategories,
+        HomeRecomended,
+        HomeFooter
     },
     data() {
         return {
@@ -145,4 +59,15 @@ export default {
     },
 }
 </script>
-<style></style>
+<style>
+body {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+</style>
