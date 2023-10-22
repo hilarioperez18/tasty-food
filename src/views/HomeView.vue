@@ -6,6 +6,14 @@
             </div>
         </header>
 
+        <!-- Botón para ir a ResultsView.vue -->
+        <div class="flex justify-center mt-4">
+            <router-link to="/results-view">
+                <button
+                    class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300">ResultsView</button>
+            </router-link>
+        </div>
+
         <!-- BUSCADOR RECETAS 
             
             
@@ -24,33 +32,9 @@
             </div>
         </div>
 
-        <!---->
-
-        <section class="recommended bg-gray-100 p-5 text-center">
-            <h2 class="text-2xl font-bold mb-6">Nuestros Recomendados</h2>
-            <div class="cards flex justify-around flex-wrap">
-                <div class="card p-4 border border-gray-300">
-                    <img src="" alt="Recomendado 1">
-                    <p class="p-2">Texto del Recomendado 1</p>
-                    <RouterLink to="/recipes"><button class="bg-blue-500 text-white px-4 py-2 mt-2">Ver más</button>
-                    </RouterLink>
-                </div>
-                <div class="card p-4 border border-gray-300">
-                    <img src="" alt="Recomendado 2">
-                    <p class="p-2">Texto del Recomendado 2</p>
-                    <RouterLink to="/recipes"><button class="bg-blue-500 text-white px-4 py-2 mt-2">Ver más</button>
-                    </RouterLink>
-
-                </div>
-                <div class="card p-4 border border-gray-300">
-                    <img src="" alt="Recomendado 3">
-                    <p class="p-2">Texto del Recomendado 3</p>
-                    <router-link :to="{ name: 'recipes', params: { id: id } }"><button
-                            class="bg-blue-500 text-white px-4 py-2 mt-2">Ver más</button>
-                    </router-link>
-                </div>
-            </div>
-        </section>
+        <div class="flex justify-center">
+            <VListRecipe />
+        </div>
 
 
         <section class="type bg-gray-100 p-5 text-center">
@@ -146,11 +130,13 @@
 </template>
 <script>
 import SearchFood from "../components/search-food/search-food.vue";
+import VListRecipe from "../components/VListRecipe.vue";
 
 
 export default {
     components: {
-        SearchFood
+        SearchFood,
+        VListRecipe
     },
     data() {
         return {
