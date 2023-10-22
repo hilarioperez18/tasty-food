@@ -1,27 +1,22 @@
 <template>
-    <HeaderComponent />
-    <div class="container">
-        <router-link to="/" />
-    </div>
+    <HeaderComponent v-if="!isLanding" />
     <RouterView />
 </template>
 
 <script>
 import HeaderComponent from "./components/HeaderComponent.vue";
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 
 export default {
-    data() {
-        return {
-        };
-    },
     name: "App",
     components: {
         HeaderComponent,
-        RouterLink,
         RouterView
-
     },
+    computed: {
+        isLanding() {
+            return this.$route.path == '/'
+        }
+    }
 };
 </script>
-<style></style>
