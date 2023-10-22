@@ -16,6 +16,7 @@ module.exports = {
         'superdarkblue': '#2f5f76',
         'mybrown': '#742b17',
         'lightbrown': '#a73d1f',
+        'beige': '#F5F5DC',
       },
     },
   },
