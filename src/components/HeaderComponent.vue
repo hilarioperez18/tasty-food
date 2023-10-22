@@ -1,11 +1,11 @@
 <template>
     <header>
-        <nav class="navbar">
-            <div class="my-navbar mx-auto px-2 sm:px-6 ">
-                <div class="relative flex items-center justify-between">
+        <nav class="navbar relative">
+            <div class="mx-auto px-2 sm:px-6 ">
+                <div class="relative z-10 flex items-center justify-between">
                     <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         <!-- Mobile menu button-->
-                        <button type="button"
+                        <button type="button" @click="isOpen = !isOpen"
                             class="relative inline-flex items-center justify-center rounded-md p-2 hover:bg-colorbg hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                             aria-controls="mobile-menu" aria-expanded="false">
                             <span class="absolute -inset-0.5"></span>
@@ -15,7 +15,7 @@
 
             Menu open: "hidden", Menu closed: "block"
           -->
-                            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            <svg v-if="!isOpen" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -25,7 +25,7 @@
 
             Menu open: "block", Menu closed: "hidden"
           -->
-                            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            <svg v-else class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
@@ -38,14 +38,14 @@
                         <div class="hidden sm:ml-6 sm:flex flex items-center">
                             <div class="flex items-center space-x-4">
                                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                <a href="#" class="bg-colordark text-white rounded-md px-3 py-2 font-medium"
+                                <a href="#" class="bg-mydarkblue text-white rounded-md px-3 py-2 text-sm font-medium"
                                     aria-current="page">Inicio</a>
                                 <a href="#"
-                                    class="hover:bg-blue-200 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Recetas</a>
+                                    class="hover:bg-mydarkblue text-white rounded-md px-3 py-2 text-sm font-medium">Recetas</a>
                                 <a href="#"
-                                    class="hover:bg-blue-200 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Recomendaciones</a>
+                                    class="hover:bg-mydarkblue text-white rounded-md px-3 py-2 text-sm font-medium">Recomendaciones</a>
                                 <a href="#"
-                                    class="hover:bg-blue-200 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Sobre
+                                    class="hover:bg-mydarkblue text-white rounded-md px-3 py-2 text-sm font-medium">Sobre
                                     Nosotros</a>
                             </div>
                         </div>
@@ -59,17 +59,17 @@
             </div>
 
             <!-- Mobile menu, show/hide based on menu state. -->
-            <div class="sm:hidden" id="mobile-menu">
+            <div v-if="isOpen" class="sm:hidden" id="mobile-menu">
                 <div class="space-y-1 px-2 pb-3 pt-2">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="#" class="bg-colordark text-white block rounded-md px-3 py-2 text-base font-medium"
+                    <a href="#" class="bg-mydarkblue text-white block rounded-md px-3 py-2 text-base font-medium"
                         aria-current="page">Inicio</a>
                     <a href="#"
-                        class="hover:bg-blue-200 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Recetas</a>
+                        class="hover:bg-mydarkblue text-white block rounded-md px-3 py-2 text-base font-medium">Recetas</a>
                     <a href="#"
-                        class="hover:bg-blue-200 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Recomendaciones</a>
+                        class="hover:bg-mydarkblue text-white block rounded-md px-3 py-2 text-base font-medium">Recomendaciones</a>
                     <a href="#"
-                        class="hover:bg-blue-200 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Sobre
+                        class="hover:bg-mydarkblue text-white block rounded-md px-3 py-2 text-base font-medium">Sobre
                         nosotros</a>
                 </div>
             </div>
@@ -78,20 +78,26 @@
 </template>
 
 
-<script>
+<script setup>
+import { ref } from 'vue';
 
+const isOpen = ref(false)
 </script>
 
 
 <style>
 :root {
     --brownfood: #dc644d;
+    --lightbrownfood: #e66e4d;
+    --redfood: #eb6362;
     --lightblue: #bae3e4;
-    --darkblue: #1b74bd;
+    --mydarkblue: #1b74bd;
     --mediumblue: #98bdf1;
     --aquamarine: #57d6e3;
     --darkaqua: #48bed9;
     --superdarkblue: #2f5f76;
+    --mybrown: #742b17;
+    --lightbrown: #a73d1f;
 }
 
 * {
@@ -102,70 +108,17 @@
 
 
 
-
-
 .navbar {
     font-family: 'open sans', sans-serif;
     background: linear-gradient(to bottom,
-            rgba(152, 189, 241, 1),
-            rgba(152, 189, 241, 0.7));
-}
+            var(--mydarkblue),
+            var(--mediumblue));
 
-.my-navbar {
-    width: 100%;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
-    display: flex;
-    margin: auto;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000;
-    height: inherit;
-    overflow: hidden;
-}
-
-.mytext {
-    display: inline-block;
-    padding: 5px 0;
-    margin-right: 17px;
-    font-size: 17px;
-    font-weight: 300;
-    text-decoration: none;
-    border-bottom: 3px solid transparent;
-    color: inherit;
 }
 
 
-.bg-colordark {
-    background: #1b74bd;
-}
 
-
-.nav1 {
-
-
-    color: #fff;
-}
-
-.contenedor-nav {
-    display: flex;
-    margin: auto;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000;
-    height: inherit;
-    overflow: hidden;
-}
-
-nav .enlaces a {
-    display: inline-block;
-    padding: 5px 0;
-    margin-right: 17px;
-    font-size: 17px;
-    font-weight: 300;
-    text-decoration: none;
-    border-bottom: 3px solid transparent;
-    color: inherit;
-}
 
 
 .logo,
