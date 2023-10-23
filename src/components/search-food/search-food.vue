@@ -126,6 +126,7 @@ export default {
                 }, 5000);
             } else {
                 localStorage.setItem("result", JSON.stringify(result));
+                localStorage.setItem("inputSearchRecipe", this.searchQuery);
                 this.$router.push({
                     name: 'results',
                 });
