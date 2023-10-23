@@ -14,7 +14,7 @@
                     </div>
                 </div>
 
-                <router-link :to="'/details/' + name"
+                <router-link :to="'/recipes/' + id"
                     class="prepare-button bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-0 py-1 w-full cursor-pointer transition duration-300">
                     PREPARE
                 </router-link>
@@ -26,6 +26,7 @@
 <script>
 export default {
     props: {
+        id: Number,
         imageUrl: String,
         category: String,
         name: String,

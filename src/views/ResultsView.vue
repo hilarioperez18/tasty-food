@@ -1,6 +1,10 @@
 <template lang="">
     <div>
         <!--<searchFood class="ml-9" />-->
+        <h2 class="section-title text-left font-bold text-xl mb-4 ml-9">Search results for:</h2>
+        <input type="search"
+            class="block mx-7 w-96 p-2.5 text-sm text-black bg-gray-300 rounded-2xl border-l-gray-50 border-l-2 border border-gray-300dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-black dark:text-blac"
+            :placeholder=searchQuery disabled />
         <VListSearchRecipe :recipes="result"></VListSearchRecipe>
     </div>
 </template>
@@ -17,10 +21,12 @@ export default {
     data() {
         return {
             result: [],
+            searchQuery: ""
         }
     },
     beforeMount() {
         this.result = JSON.parse(localStorage.getItem("result"))
+        this.searchQuery = localStorage.getItem("inputSearchRecipe")
         //console.log(this.result);
     }
 }
