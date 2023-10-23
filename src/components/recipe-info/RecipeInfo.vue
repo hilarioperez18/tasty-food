@@ -1,5 +1,5 @@
 <template>
-    <div class="container bg-gray-200 md:rounded-3xl mx-auto lg:mt-5">
+    <div class="container bg-gray-100">
         <div class="lg:flex lg:items-center">
             <div class="lg:mx-6 md:mt-6 lg:w-auto">
                 <img :src="image" alt="Imagen de receta" class="w-full h-auto object-cover lg:rounded-3xl">
@@ -26,7 +26,9 @@
         </div>
         <div class="instructions m-6">
             <h3 class="text-xl font-semibold mb-4 text-center">Instructions</h3>
-            <p class="text-lg font-normal text-justify">{{ instructions }}</p>
+            <p v-if="isInstructionsEmpty()" class="text-lg font-normal text-justify">Not instructions available</p>
+            <p v-else-if="!isInstructionsEmpty()" class="text-lg font-normal text-justify" v-html="processedInstructions">
+            </p>
         </div>
     </div>
 </template>
@@ -46,9 +48,16 @@ export default {
             recipeName: '',
             categories: [],
             image: '',
-            instructions: '',
+            instructions: 'Not instructions available',
             time: '',
         };
+    },
+    computed: {
+        processedInstructions() {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(this.instructions, 'text/html');
+            return doc.body.textContent;
+        },
     },
     methods: {
         async getRecipeInfo() {
@@ -68,6 +77,10 @@ export default {
 
             console.log(this.ingredients);
         },
+        isInstructionsEmpty() {
+            return this.instructions === '' || this.instructions === null || this.instructions === undefined;
+        },
+
     },
     mounted() {
         this.getRecipeInfo();
