@@ -28,7 +28,7 @@ export default {
 <style>
 #test {
     background-color: brown;
-    height: max-content;
-    width: max-content;
+    height: 100%;
+    width: 100%;
 }
 </style>

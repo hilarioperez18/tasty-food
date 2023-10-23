@@ -29,7 +29,10 @@ export default {
                 .then((response) => response.json())
                 .then((recipe) => {
                     this.recipes = recipe;
-                    console.log(this.recipes);
+                    localStorage.setItem("result", JSON.stringify(this.recipes));
+                            this.$router.push({
+                                name: 'results',
+                            });
                 });
         }
     }
