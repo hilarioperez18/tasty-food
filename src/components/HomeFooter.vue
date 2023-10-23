@@ -11,7 +11,7 @@
                         Bárbara Flores
                     </HomeFooterLinks>,
                     <HomeFooterLinks url="https://github.com/gjescuderoamodeo" colorNartural="white" colorHover="#12a14b">
-                        Guillermo Escudero
+                        Guillermo José Escudero
                     </HomeFooterLinks>,
                     <HomeFooterLinks url="https://github.com/hilarioperez18" colorNartural="white" colorHover="#57d6e3">
                         Hilario Pérez

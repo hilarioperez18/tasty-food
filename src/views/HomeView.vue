@@ -20,8 +20,9 @@
             </div>
         </div>
 
-        <!-- Component Our Recomended-->
-        <HomeRecomended />
+        <section class="bg-gray-100 p-5">
+            <VListRecipe />
+        </section>
 
         <section class="bg-gray-100 p-5 text-center">
             <h2 class="text-2xl font-bold mb-6 text-center">Cuisine Type</h2>
@@ -33,7 +34,7 @@
             <RecipeCategories />
         </section>
 
-        <!-- Component Our Recomended-->
+
         <HomeFooter />
     </div>
 </template>
@@ -43,6 +44,7 @@ import CountryFilter from '../components/cuisine-types/CountryFilter.vue'
 import RecipeCategories from '../components/categories/RecipeCategories.vue'
 import HomeRecomended from '@/components/HomeRecomended.vue';
 import HomeFooter from '@/components/HomeFooter.vue';
+import VListRecipe from '@/components/VListRecipe.vue'
 
 export default {
     components: {
@@ -50,7 +52,8 @@ export default {
         CountryFilter,
         RecipeCategories,
         HomeRecomended,
-        HomeFooter
+        HomeFooter,
+        VListRecipe
     },
     data() {
         return {
