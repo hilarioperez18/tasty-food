@@ -1,7 +1,7 @@
 <template>
     <div class="max-w-max mx-5 my-5 bg-gray-100">
         <div class="recipe-list shadow-md p-4 flex flex-wrap justify-center">
-            <VCardRecipe v-for=" recipe  in  recipes.slice(0,4) " :key="recipe.id" :id="String(recipe.id)"
+            <VCardRecipe v-for=" recipe  in  recipeImages " :key="recipe.id" :id="String(recipe.id)"
                 :imageUrl="recipe.image" :name="recipe.title" :preparationTime="String(recipe.readyInMinutes)">
             </VCardRecipe>
         </div>
@@ -16,7 +16,7 @@ export default {
     data() {
         return {
             image: '',
-            recipeImages: {},
+            recipeImages: [],
         };
     },
     components: {
@@ -26,18 +26,24 @@ export default {
     beforeMount() {
         console.log("Lista")
         console.log(this.recipes);
-        this.recipes.forEach((recipe) => {
+        this.recipes.forEach(async (recipe) => {
 
             const apiKey = import.meta.env.VITE_API_KEY;
             const urlRecipes = `https://api.spoonacular.com/recipes/${recipe.id}/information?apiKey=${apiKey}`;
 
-            fetch(urlRecipes)
+            await fetch(urlRecipes)
                 .then((response) => response.json())
                 .then((recipe) => {
-                    this.recipeImages[recipe.id] = recipe.image;
+                    const r={
+                    id:recipe.id,
+                    image:recipe.image,
+                    title:recipe.title,
+                    readyInMinutes:recipe.readyInMinutes
+                    }
+                this.recipeImages.push(r)
                 });
         });
-
+        console.log("estamos aqui")
         console.log(this.recipeImages);
     },
     props: {
