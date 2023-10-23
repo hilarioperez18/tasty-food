@@ -33,7 +33,7 @@
             </div>
 
             <div class="relative flex-grow">
-                <input type="search" id="search-dropdown"
+                <input @keyup.enter="searchRecepie" type="search" id="search-dropdown"
                     class="block w-96 p-2.5 text-sm text-black bg-gray-300 rounded-2xl border-l-gray-50 border-l-2 border border-gray-300dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-black dark:text-blac"
                     placeholder="Find recipe" required v-model="searchQuery" />
                 <button @click="searchRecepie"
