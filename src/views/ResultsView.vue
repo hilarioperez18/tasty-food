@@ -1,18 +1,18 @@
 <template lang="">
     <div>
-        <searchFood class="ml-9" />
+        <!--<searchFood class="ml-9" />-->
         <VListSearchRecipe :recipes="result"></VListSearchRecipe>
     </div>
 </template>
 <script>
 // import CountryFilter from "../components/cuisine-types/CountryFilter.vue";
 import VListSearchRecipe from '../components/VListSearchRecipe.vue';
-import searchFood from '../components/search-food/search-food.vue';
+//import searchFood from '../components/search-food/search-food.vue';
 
 export default {
     components: {
         VListSearchRecipe,
-        searchFood
+        //searchFood
     },
     data() {
         return {
