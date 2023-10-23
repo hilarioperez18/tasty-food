@@ -100,12 +100,12 @@ const isOpen = ref(false)
     --lightbrown: #a73d1f;
 }
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 
 .navbar {
@@ -116,6 +116,9 @@ const isOpen = ref(false)
 
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
 }
+
+
+
 
 
 .logo,
