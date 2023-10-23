@@ -1,5 +1,5 @@
 <template lang="">
-    <div id="test">
+    <div>
         <searchFood class="ml-9" />
         <VListSearchRecipe :recipes="result"></VListSearchRecipe>
     </div>
@@ -25,10 +25,4 @@ export default {
     }
 }
 </script>
-<style>
-#test {
-    background-color: brown;
-    height: max-content;
-    width: max-content;
-}
-</style>
+<style></style>
