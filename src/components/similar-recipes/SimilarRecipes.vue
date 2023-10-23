@@ -2,18 +2,17 @@
     <div class=" bg-gray-100">
         <h2 class="section-title text-center font-bold text-xl mb-4">SIMILAR RECIPES</h2>
         <div class="shadow-md p-4 flex flex-wrap justify-center">
-            <VCardRecipe v-for="recipe in similarRecipes.slice(0, 4)" :key="recipe.id" :recipe="recipe" class="m-2">
-            </VCardRecipe>
+            <ListSimilarRecipes :recipes="similarRecipes"></ListSimilarRecipes>
         </div>
     </div>
 </template>
 
 <script>
-import VCardRecipe from '@/components/VCardRecipe.vue'
+import ListSimilarRecipes from './ListSimilarRecipes.vue';
 
 export default {
     components: {
-        VCardRecipe
+        ListSimilarRecipes,
     },
     data() {
         return {
@@ -22,15 +21,18 @@ export default {
         }
     },
     methods: {
-        getSimilarRecipes() {
+        async getSimilarRecipes() {
             const apiKey = import.meta.env.VITE_API_KEY;
-            const url = `https://api.spoonacular.com/recipes/${this.id}/similar?apiKey=${apiKey}`;
+            const url = `https://api.spoonacular.com/recipes/${this.id}/similar?apiKey=${apiKey}&number=4`;
 
-            fetch(url)
+            await fetch(url)
                 .then((response) => response.json())
                 .then((recipes) => {
                     this.similarRecipes = recipes;
                 });
+
+            console.log("holaaaaa")
+            console.log(this.similarRecipes);
         }
     },
     mounted() {

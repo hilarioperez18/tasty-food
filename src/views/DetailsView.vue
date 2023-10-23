@@ -16,7 +16,7 @@ export default {
     },
     computed: {
         idFromRoute() {
-            return this.$route.params.id;
+            return String(this.$route.params.id);
         },
     },
 }
