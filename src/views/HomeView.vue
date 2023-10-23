@@ -42,7 +42,6 @@
 import SearchFood from "../components/search-food/search-food.vue";
 import CountryFilter from '../components/cuisine-types/CountryFilter.vue'
 import RecipeCategories from '../components/categories/RecipeCategories.vue'
-import HomeRecomended from '@/components/HomeRecomended.vue';
 import HomeFooter from '@/components/HomeFooter.vue';
 import VListRecipe from '@/components/VListRecipe.vue'
 
@@ -51,9 +50,8 @@ export default {
         SearchFood,
         CountryFilter,
         RecipeCategories,
-        HomeRecomended,
         HomeFooter,
-        VListRecipe
+        VListRecipe,
     },
     data() {
         return {
