@@ -21,7 +21,7 @@ export default {
     },
     beforeMount() {
         this.result = JSON.parse(localStorage.getItem("result"))
-        console.log(this.result);
+        //console.log(this.result);
     }
 }
 </script>
