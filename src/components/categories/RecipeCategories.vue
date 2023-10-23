@@ -30,9 +30,9 @@ export default {
                 .then((recipe) => {
                     this.recipes = recipe;
                     localStorage.setItem("result", JSON.stringify(this.recipes));
-                            this.$router.push({
-                                name: 'results',
-                            });
+                    this.$router.push({
+                        name: 'results',
+                    });
                 });
         }
     }
