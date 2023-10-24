@@ -22,6 +22,12 @@ const router = createRouter({
             props: true
         },
         {
+            path: '/recommended',
+            name: 'recommended',
+            component: () => import('../views/RecommendedView.vue'),
+            props: true
+        },
+        {
             path: '/:pathMatch(.*)*',
             name: 'not-found',
             component: NotFoundView

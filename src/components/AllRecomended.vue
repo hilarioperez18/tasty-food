@@ -83,7 +83,7 @@ export default {
     methods: {
         async getRecommend() {
             const apiKey = import.meta.env.VITE_API_KEY;
-            let urlRecipes = `https://api.spoonacular.com/recipes/complexSearch?number=4&sort=random&apiKey=${apiKey}`;
+            let urlRecipes = `https://api.spoonacular.com/recipes/complexSearch?number=15&sort=random&apiKey=${apiKey}`;
 
             await fetch(urlRecipes)
                 .then((response) => response.json())

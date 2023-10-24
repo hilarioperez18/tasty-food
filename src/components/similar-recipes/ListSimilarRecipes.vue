@@ -26,7 +26,7 @@ export default {
     },
 
     async created() {
-        this.recipes= await this.getSimilarRecipes()
+        this.recipes = await this.getSimilarRecipes()
         console.log("Lista")
         console.log(this.recipes);
         this.infoRecipeComplete = await this.getRecipesInfo(this.recipes)
@@ -62,7 +62,8 @@ export default {
             const p1 = fetch(promiseList[0])
             const p2 = fetch(promiseList[1])
             const p3 = fetch(promiseList[2])
-            const promises = [p1, p2, p3];
+            const p4 = fetch(promiseList[3])
+            const promises = [p1, p2, p3, p4];
             console.log("promise")
             console.log(promiseList)
             Promise.all(promises)
@@ -81,7 +82,7 @@ export default {
                 )
 
         },
-        
+
     },
 };
 </script>

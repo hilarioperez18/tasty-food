@@ -37,16 +37,17 @@
                         </div>
                         <div class="hidden sm:ml-6 sm:flex flex items-center">
                             <div class="flex items-center space-x-4">
-                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                <a href="#" class="bg-mydarkblue text-white rounded-md px-3 py-2 text-sm font-medium"
-                                    aria-current="page">Inicio</a>
+                                <router-link to="/" href="#"
+                                    class="hover:bg-mydarkblue text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    aria-current="page">Home</router-link>
                                 <a href="#"
-                                    class="hover:bg-mydarkblue text-white rounded-md px-3 py-2 text-sm font-medium">Recetas</a>
+                                    class="hover:bg-mydarkblue text-white rounded-md px-3 py-2 text-sm font-medium">Recipes</a>
+                                <router-link to="/recommended"
+                                    class="hover:bg-mydarkblue text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    aria-current="page">Recommendations</router-link>
                                 <a href="#"
-                                    class="hover:bg-mydarkblue text-white rounded-md px-3 py-2 text-sm font-medium">Recomendaciones</a>
-                                <a href="#"
-                                    class="hover:bg-mydarkblue text-white rounded-md px-3 py-2 text-sm font-medium">Sobre
-                                    Nosotros</a>
+                                    class="hover:bg-mydarkblue text-white rounded-md px-3 py-2 text-sm font-medium">About
+                                    us</a>
                             </div>
                         </div>
                     </div>
