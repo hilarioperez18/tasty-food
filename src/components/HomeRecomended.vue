@@ -5,7 +5,6 @@
             <VCardRecipe v-for=" recipe  in  recipes " :key="recipe.id" :id="String(recipe.id)"
                 :imageUrl="recipe.image" :name="recipe.title" :preparationTime="String(recipe.readyInMinutes)">
             </VCardRecipe>
-            <!-- <VListSearchRecipe :recipes="recipes"></VListSearchRecipe> -->
         </div>
     </section>
 </template>
@@ -34,7 +33,7 @@ export default {
             await fetch(urlRecipes)
                 .then((response) => response.json())
                 .then((recipe) => {
-                    this.recipes = recipe;
+                    this.recipes = recipe.results;
                     console.log(recipe)
                 })
         }
