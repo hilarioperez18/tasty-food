@@ -33,10 +33,10 @@
             </div>
 
             <div class="relative flex-grow">
-                <input @keyup.enter="searchRecepie" type="search" id="search-dropdown"
+                <input @keyup.enter="goViewResult" type="search" id="search-dropdown"
                     class="block w-96 p-2.5 text-sm text-black bg-gray-300 rounded-2xl border-l-gray-50 border-l-2 border border-gray-300dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-black dark:text-blac"
                     placeholder="Find recipe" required v-model="searchQuery" />
-                <button @click="searchRecepie"
+                <button @click="goViewResult"
                     class="absolute top-0 right-0 p-2.5 text-sm font-medium h-full text-black rounded-2xl borde">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 20 20">
@@ -86,47 +86,16 @@ export default {
             this.selectedCategory = category;
             this.showDropdown = false;
         },
-        async searchRecepie() {
-            const apiKey = import.meta.env.VITE_API_KEY;
-            let urlRecepies = 'https://api.spoonacular.com/recipes/complexSearch';
-            let result = [];
-            let objeto = {};
-
-            switch (this.selectedCategory) {
-                case 'FindByRecipie':
-                    if (this.searchQuery) { // Verifica si searchQuery tiene un valor
-                        urlRecepies = `https://api.spoonacular.com/recipes/complexSearch?query=${this.searchQuery}&apiKey=${apiKey}`;
-                        await fetch(urlRecepies)
-                            .then(response => response.json())
-                            //recorro el array resultado, lo meto en un objeto para dejarlo más limpio y lo meto en un array que luego devuelvo 
-                            .then(results => results.results.forEach(element => {
-                                objeto = { "id": element.id, "title": element.title, "image": element.image };
-                                result.push(objeto);
-                            }));
-                    }
-                    break;
-                //si seleccionado es por ingrediente    
-                case 'FindByIngredient':
-                    if (this.searchQuery) { // Verifica si searchQuery tiene un valor
-                        urlRecepies = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${this.searchQuery}&apiKey=${apiKey}`;
-                        await fetch(urlRecepies)
-                            .then(response => response.json())
-                            //recorro el array resultado, lo meto en un objeto para dejarlo más limpio y lo meto en un array que luego devuelvo 
-                            .then(results => results.forEach(element => {
-                                result.push(element);
-                            }));
-                    }
-                    break;
-            }
+        async goViewResult() {
             //si resultado está vacio salta un alert de que no se encuentran resultados
-            if (result.length == 0) {
+            if (this.searchQuery.length == 0) {
                 this.noResultsFound = true;
                 setTimeout(() => {
                     this.noResultsFound = false;
                 }, 5000);
             } else {
-                localStorage.setItem("result", JSON.stringify(result));
-                localStorage.setItem("inputSearchRecipe", this.searchQuery);
+                localStorage.setItem("searchQuery", JSON.stringify(this.searchQuery));
+                localStorage.setItem("selectedCategory", JSON.stringify(this.selectedCategory));
                 this.$router.push({
                     name: 'results',
                 });
