@@ -8,14 +8,14 @@
             </div>
             <div class="flex flex-col justify-end mt-2">
                 <div class="card-preparation-time text-sm text-black flex items-center justify-end mb-1">
-                    <div class="time-container bg-beige rounded-full p-1 flex items-center gap-1">
+                    <div class="time-container bg-yellow-500 text-white px-2 py-1 rounded-lg m-2 lg:mb-0 w-auto">
                         <span class="clock-icon text-black text-base">⏱️</span>
-                        <span class="time-number text-base">{{ preparationTime }}</span>
+                        <span class="time-number text-base">{{ preparationTime }} min</span>
                     </div>
                 </div>
 
                 <router-link :to="'/recipes/' + id"
-                    class="prepare-button bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-0 py-1 w-full cursor-pointer transition duration-300">
+                    class="text-center bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-0 py-1 w-full cursor-pointer transition duration-300">
                     PREPARE
                 </router-link>
             </div>
@@ -26,11 +26,12 @@
 <script>
 export default {
     props: {
-        id: Number,
+        id: String,
         imageUrl: String,
         category: String,
         name: String,
         preparationTime: String
-    }
+    },
+
 }
 </script>

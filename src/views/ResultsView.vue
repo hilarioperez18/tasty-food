@@ -5,7 +5,7 @@
         <input type="search"
             class="block mx-7 w-96 p-2.5 text-sm text-black bg-gray-300 rounded-2xl border-l-gray-50 border-l-2 border border-gray-300dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-black dark:text-blac"
             :placeholder=searchQuery disabled />
-        <VListSearchRecipe :recipes="result"></VListSearchRecipe>
+        <VListSearchRecipe :searchQuery="searchQuery"></VListSearchRecipe>
     </div>
 </template>
 <script>
@@ -20,13 +20,12 @@ export default {
     },
     data() {
         return {
-            result: [],
-            searchQuery: ""
+            searchQuery: [],
+            inputSearchQuery: ""
         }
     },
     beforeMount() {
-        this.result = JSON.parse(localStorage.getItem("result"))
-        this.searchQuery = localStorage.getItem("inputSearchRecipe")
+        this.searchQuery = JSON.parse(localStorage.getItem("searchQuery"))
         //console.log(this.result);
     }
 }
