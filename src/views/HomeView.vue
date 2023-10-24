@@ -21,7 +21,7 @@
         </div>
 
         <section class="bg-gray-100 p-5">
-            <!-- <HomeRecomended></HomeRecomended> -->
+            <HomeRecomended></HomeRecomended>
         </section>
 
         <section class="bg-gray-100 p-5 text-center">
@@ -42,7 +42,7 @@
 import SearchFood from "../components/search-food/search-food.vue";
 import CountryFilter from '../components/cuisine-types/CountryFilter.vue'
 import RecipeCategories from '../components/categories/RecipeCategories.vue'
-import HomeRecomended from '@/components/HomeRecomended.vue';
+import HomeRecomended from '../components/HomeRecomended.vue'
 import HomeFooter from '@/components/HomeFooter.vue';
 
 
