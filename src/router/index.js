@@ -1,7 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import DetailsView from '../views/DetailsView.vue'
-import HomeView from '../views/HomeView.vue'
-import ResultsView from '../views/ResultsView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 
 const router = createRouter({
