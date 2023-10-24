@@ -66,6 +66,14 @@
 
 
         </div>
+        <div class="flex flex-col align-middle items-center">
+            <h2 class="uppercase text-3xl p-2">You seem to be lost</h2>
+            <router-link to="/">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded btn">
+                    Go Home
+                </button>
+            </router-link>
+        </div>
     </div>
 </template>
 
@@ -76,6 +84,18 @@ export default {
 </script>
 
 <style scoped>
+.btn {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    
+}
 .fundo {
     animation: scales 3s alternate infinite;
     transform-origin: center;
@@ -156,8 +176,7 @@ export default {
 
 
 .main {
-
-    min-height: 600px;
+    min-height: 500px;
     margin: 0px auto;
     width: auto;
     max-width: 460px;
