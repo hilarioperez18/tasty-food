@@ -3,6 +3,7 @@
         <div class="lg:flex lg:items-center">
             <div class="lg:mx-6 md:mt-6 lg:w-auto">
                 <img :src="image" alt="Imagen de receta" class="w-full h-auto object-cover lg:rounded-3xl">
+                
             </div>
             <div class="lg:w-1/2 m-6 ">
                 <h2 class="text-2xl font-semibold mb-4">{{ recipeName }}</h2>
