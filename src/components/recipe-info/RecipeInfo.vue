@@ -3,6 +3,7 @@
         <div class="lg:flex lg:items-center">
             <div class="lg:mx-6 md:mt-6 lg:w-auto">
                 <img :src="image" alt="Imagen de receta" class="w-full h-auto object-cover lg:rounded-3xl">
+                
             </div>
             <div class="lg:w-1/2 m-6 ">
                 <h2 class="text-2xl font-semibold mb-4">{{ recipeName }}</h2>
@@ -26,7 +27,7 @@
         </div>
         <div class="instructions m-6">
             <h3 class="text-xl font-semibold mb-4 text-center">Instructions</h3>
-            <p class="text-lg font-normal text-justify">{{ instructions }}</p>
+            <p class="text-lg font-normal text-justify" v-html="processedInstructions"></p>
         </div>
     </div>
 </template>
@@ -36,7 +37,7 @@ export default {
     name: 'RecipeInfo',
     props: {
         recipeId: {
-            type: Number,
+            type: String,
             required: true,
         },
     },
@@ -66,7 +67,14 @@ export default {
                     this.ingredients = recipe.extendedIngredients;
                 });
 
-            console.log(this.ingredients);
+        },
+    },
+    computed: {
+        processedInstructions() {
+            // Utiliza DOMParser para convertir el HTML en texto
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(this.instructions, 'text/html');
+            return doc.body.textContent;
         },
     },
     mounted() {

@@ -17,23 +17,17 @@ export default {
     data() {
         return {
             recipeCategories: ["MEAT", "FISH", "VEGETABLES", "PASTA", "RICE", "EGGS", "JAM", "DESSERT", "CHICKEN", "BREAKFAST", "DINNER", "SEAFOOD"],
-            recipes: []
+            recipes: [],
+            selectedCategory: "FindByIngredient"
         }
     },
     methods: {
         async findCategories(categoria) {
-            const apiKey = import.meta.env.VITE_API_KEY;
-            let urlRecipes = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${categoria}&apiKey=${apiKey}`;
-
-            await fetch(urlRecipes)
-                .then((response) => response.json())
-                .then((recipe) => {
-                    this.recipes = recipe;
-                    localStorage.setItem("result", JSON.stringify(this.recipes));
-                    this.$router.push({
-                        name: 'results',
-                    });
-                });
+            localStorage.setItem("selectedCategory", JSON.stringify(this.selectedCategory));
+            localStorage.setItem("searchQuery", JSON.stringify(categoria));
+            this.$router.push({
+                name: 'results',
+            });
         }
     }
 }
